@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PlayerDefaultConfig
   m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.PlayerConfig
   <MoveSpeed>k__BackingField: 5
+  <JumpForce>k__BackingField: 1000
