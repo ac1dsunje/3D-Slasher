@@ -129,7 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   _config: {fileID: 11400000, guid: 284634fbf7ff26149a54bf853e7dfc5d, type: 2}
-  _currentBiome: 
 --- !u!54 &2840108592283542201
 Rigidbody:
   m_ObjectHideFlags: 0

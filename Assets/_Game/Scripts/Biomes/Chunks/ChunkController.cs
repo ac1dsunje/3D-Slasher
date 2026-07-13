@@ -5,7 +5,9 @@ namespace _Game.Scripts.Biomes.Chunks
 {
 public class ChunkController: MonoBehaviour
 {
-    [SerializeField] private Biome _biome;
+    [SerializeField] private Transform[] _points;
+    [SerializeField] private Transform _centralPoint;
+    [SerializeField] private Biome _biome; // Not important to use serialize field here & can be deleted
     private Renderer _renderer;
 
     private const float ChunkOffset = 0.5f;
