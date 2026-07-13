@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using _Game.Scripts.Player;
+using UnityEngine;
 
 namespace _Game.Scripts.Biomes.Chunks
 {
@@ -23,8 +24,15 @@ public class ChunkController: MonoBehaviour
             0,
             gridPos.y * chunkSize + chunkSize * ChunkOffset
         );
-
+        
+        GetRandomRotation();
         ApplyBiome();
+    }
+
+    private void GetRandomRotation()
+    {
+        var angle = Random.Range(0, 4) * 90;
+        transform.rotation = Quaternion.Euler(0, angle, 0);
     }
 
     private void ApplyBiome()
@@ -47,10 +55,7 @@ public class ChunkController: MonoBehaviour
     private void TryUpdatePlayerChunk(Collision collision)
     {
         var player = collision.gameObject.GetComponent<PlayerController>();
-        if (player._currentBiome == _biome.BiomeName) return;
-        
-        Debug.Log($"Player Stepped in a {_biome.BiomeName}!");
-        player._currentBiome = _biome.BiomeName;
+        player.TryUpdateBiome(_biome);
     }
 }
 }

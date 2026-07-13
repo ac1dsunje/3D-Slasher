@@ -1,6 +1,7 @@
+using _Game.Scripts.Biomes;
 using UnityEngine;
 
-namespace _Game.Scripts
+namespace _Game.Scripts.Player
 {
 public class PlayerController : MonoBehaviour
 {
@@ -9,8 +10,15 @@ public class PlayerController : MonoBehaviour
     private float _horizontalInput;
     private float _verticalInput;
     private bool _jumpRequested;
-    
-    public string _currentBiome;
+    private Biome _currentBiome;
+
+    public void TryUpdateBiome(Biome newBiome)
+    {
+        if (Equals(_currentBiome, newBiome)) return;
+        
+        _currentBiome = newBiome;
+        Debug.Log($"Player Stepped in a {_currentBiome.BiomeName} biome!");
+    }
     
     private void Awake()
     {
@@ -29,12 +37,21 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Move();
+        Jump();
+    }
+
+    private void Move()
+    {
         _rb.linearVelocity = new Vector3(
             _horizontalInput * _config.MoveSpeed,
             0, 
             _verticalInput * _config.MoveSpeed
-            );
+        );
+    }
 
+    private void Jump()
+    {
         if (!_jumpRequested) return;
         _rb.AddForce(Vector3.up * _config.JumpForce, ForceMode.Impulse);
         _jumpRequested = false;

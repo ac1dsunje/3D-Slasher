@@ -1,4 +1,5 @@
 using _Game.Scripts.Biomes.Chunks;
+using _Game.Scripts.Player;
 using UnityEngine;
 
 namespace _Game.Scripts
