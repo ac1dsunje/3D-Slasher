@@ -7,5 +7,10 @@ public class Biome : ScriptableObject
 {
     [field: SerializeField] public string BiomeName { get; private set; }
     [field: SerializeField] public Color BaseColor { get; private set; } = Color.white;
+
+    [field: SerializeField] public GameObject[] Buildings { get; private set; }
+    [field: SerializeField] public GameObject[] Environments { get; private set; }
+    [field: SerializeField] public GameObject[] Enemies { get; private set; }
+    [field: SerializeField] public AudioClip[] Music { get; private set; }
 }
 }
