@@ -14,3 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.Biomes.Biome
   <BiomeName>k__BackingField: Forest
   <BaseColor>k__BackingField: {r: 0.5490196, g: 0.7882354, b: 0.1411765, a: 1}
+  <Buildings>k__BackingField: []
+  <Environments>k__BackingField:
+  - {fileID: 8066893594861025916, guid: b4162e0cf95b556429ba293bad0bab51, type: 3}
+  <SpecialObjects>k__BackingField: []
+  <Enemies>k__BackingField: []
+  <Music>k__BackingField: []

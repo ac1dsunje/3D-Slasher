@@ -7,7 +7,7 @@ public class ChunkController: MonoBehaviour
 {
     [SerializeField] private Transform[] _points;
     [SerializeField] private Transform _centralPoint;
-    [SerializeField] private Biome _biome; // Not important to use serialize field here & can be deleted
+    private Biome _biome;
     private Renderer _renderer;
 
     private const float ChunkOffset = 0.5f;
@@ -39,12 +39,42 @@ public class ChunkController: MonoBehaviour
 
     private void ApplyBiome()
     {
+        SetBiomeColor();
+        
+        CreateEnvironment();
+    }
+
+    private void SetBiomeColor()
+    {
         var mat = new Material(_renderer.sharedMaterial)
         {
             color = _biome.BaseColor
         };
         
         _renderer.material = mat;
+    }
+
+    private void CreateEnvironment()
+    {
+        if (_biome.Environments.Length == 0) return;
+        foreach (var point in _points)
+        {
+            TrySetRandomEnvironment(point);
+        }
+        TrySetRandomEnvironment(_centralPoint);
+    }
+
+    private void TrySetRandomEnvironment(Transform position)
+    {
+        var spawnChance = Random.Range(0, 100);
+        if (spawnChance < _biome.EnvChance) return;
+        var rand = Random.Range(0, _biome.Environments.Length);
+        CreateObject(_biome.Environments[rand], position);
+    }
+
+    private void CreateObject(GameObject obj, Transform parent)
+    {
+        Instantiate(obj, parent.position, Quaternion.identity, parent);
     }
 
     private void OnCollisionEnter(Collision collision)

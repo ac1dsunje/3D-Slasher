@@ -10,6 +10,7 @@ public class Biome : ScriptableObject
 
     [field: SerializeField] public GameObject[] Buildings { get; private set; }
     [field: SerializeField] public GameObject[] Environments { get; private set; }
+    [field: SerializeField] public  int EnvChance { get; private set; } = 50;
     [field: SerializeField] public GameObject[] SpecialObjects { get; private set; }
     [field: SerializeField] public GameObject[] Enemies { get; private set; }
     [field: SerializeField] public AudioClip[] Music { get; private set; }
