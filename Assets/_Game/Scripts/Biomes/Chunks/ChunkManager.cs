@@ -7,7 +7,6 @@ public class ChunkManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private ChunkController _chunkPrefab;
-    [SerializeField] private BiomeSelector _biomeSelector;
 
     [Header("Settings")]
     [SerializeField] private float _chunkSize = 10f;
@@ -19,10 +18,12 @@ public class ChunkManager : MonoBehaviour
     private readonly List<Vector2Int> _chunksToUnload = new();
 
     private Transform _player;
+    private BiomeManager _biomeManager;
 
-    public void Construct(Transform player)
+    public void Construct(Transform player, BiomeManager biomeManager)
     {
         _player = player;
+        _biomeManager = biomeManager;
     }
 
     private void Update()
@@ -72,7 +73,7 @@ public class ChunkManager : MonoBehaviour
         }
         else
         {
-            var biome = _biomeSelector.GetBiomeAt(gridPos);
+            var biome = _biomeManager.GetBiomeAt(gridPos);
             chunk = Instantiate(_chunkPrefab, transform);
             chunk.Initialize(gridPos, biome, _chunkSize);
         }
