@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   _config: {fileID: 11400000, guid: 284634fbf7ff26149a54bf853e7dfc5d, type: 2}
+  _currentBiome: 
 --- !u!54 &2840108592283542201
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -137,7 +138,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7306569974239954113}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 35
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
