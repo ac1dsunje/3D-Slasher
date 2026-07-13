@@ -11,9 +11,13 @@ public class ChunkManager : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private float _chunkSize = 10f;
-    [SerializeField] private int _viewRadius = 4;
+    [SerializeField] private int _viewRadius;
 
     private readonly Dictionary<Vector2Int, ChunkController> _loadedChunks = new();
+    private readonly Dictionary<Vector2Int, ChunkController> _unloadedChunks = new();
+    
+    private readonly List<Vector2Int> _chunksToUnload = new();
+
     private Transform _player;
 
     public void Construct(Transform player)
@@ -42,16 +46,46 @@ public class ChunkManager : MonoBehaviour
                 }
             }
         }
+
+        _chunksToUnload.Clear();
+
+        foreach (var loadedChunk in _loadedChunks)
+        {
+            if (Mathf.Abs(loadedChunk.Key.x - playerChunk.x) > _viewRadius ||
+                Mathf.Abs(loadedChunk.Key.y - playerChunk.y) > _viewRadius)
+            {
+                _chunksToUnload.Add(loadedChunk.Key);
+            }
+        }
+
+        foreach (var key in _chunksToUnload)
+        {
+            UnloadChunk(key);
+        }
     }
 
     private void SpawnChunk(Vector2Int gridPos)
     {
-        var biome = _biomeSelector.GetBiomeAt(gridPos);
-
-        var chunk = Instantiate(_chunkPrefab, transform);
-        chunk.Initialize(gridPos, biome, _chunkSize);
+        if (_unloadedChunks.Remove(gridPos, out var chunk))
+        {
+            chunk.gameObject.SetActive(true);
+        }
+        else
+        {
+            var biome = _biomeSelector.GetBiomeAt(gridPos);
+            chunk = Instantiate(_chunkPrefab, transform);
+            chunk.Initialize(gridPos, biome, _chunkSize);
+        }
 
         _loadedChunks[gridPos] = chunk;
+    }
+
+    private void UnloadChunk(Vector2Int gridPos)
+    {
+        if (!_loadedChunks.Remove(gridPos, out var chunk)) return;
+        
+        _unloadedChunks[gridPos] = chunk;
+        chunk.gameObject.SetActive(false);
     }
 
     private Vector2Int WorldToChunkGrid(Vector3 worldPos)
