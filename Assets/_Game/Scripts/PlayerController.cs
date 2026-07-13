@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rb;
     private float _horizontalInput;
     private float _verticalInput;
+    public string _currentBiome;
     
     private void Awake()
     {
