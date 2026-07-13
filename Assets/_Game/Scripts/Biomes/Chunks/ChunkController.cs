@@ -66,10 +66,15 @@ public class ChunkController: MonoBehaviour
 
     private void TrySetRandomEnvironment(Transform position)
     {
-        var spawnChance = Random.Range(0, 100);
-        if (spawnChance < _biome.EnvChance) return;
+        if (!GetSpawnPossibility(_biome.EnvChance)) return;
         var rand = Random.Range(0, _biome.Environments.Length);
         CreateObject(_biome.Environments[rand], position);
+    }
+
+    private bool GetSpawnPossibility(int chance)
+    {
+        var spawnChance = Random.Range(0, 100);
+        return spawnChance >= _biome.EnvChance;
     }
 
     private void CreateObject(GameObject obj, Transform parent)
