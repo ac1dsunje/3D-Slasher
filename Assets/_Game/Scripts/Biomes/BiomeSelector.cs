@@ -11,7 +11,8 @@ public class BiomeSelector : ScriptableObject
     [field: SerializeField] public int Seed { get; private set; }
 
     public void Awake()
-    { 
+    {
+        if (Seed != 0) return;
         Seed = Random.Range(0, 99999999);
     }
 

@@ -4,7 +4,7 @@ namespace _Game.Scripts.Biomes.Chunks
 {
 public class ChunkController: MonoBehaviour
 {
-    private Biome _biome;
+    [SerializeField] private Biome _biome;
     private Renderer _renderer;
 
     private const float ChunkOffset = 0.5f;
@@ -41,6 +41,11 @@ public class ChunkController: MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Player")) return;
         
+        TryUpdatePlayerChunk(collision);
+    }
+
+    private void TryUpdatePlayerChunk(Collision collision)
+    {
         var player = collision.gameObject.GetComponent<PlayerController>();
         if (player._currentBiome == _biome.BiomeName) return;
         

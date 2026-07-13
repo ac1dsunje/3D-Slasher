@@ -11,14 +11,10 @@
             "id": "823dceb78ec69faa",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Генерация/OpenWorld/Состояние мира/Глобальные состояния.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Глобальные состояния"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
             }
           }
         ]
@@ -33,12 +29,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Лор/Лор.md",
+                "file": "Генерация/OpenWorld/Биомы/Снежная равнина.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Лор"
+              "title": "Снежная равнина"
             }
           }
         ]
@@ -203,12 +199,19 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "32448ffbcc5654dc",
+  "active": "823dceb78ec69faa",
   "lastOpenFiles": [
-    "3D slasher.md",
-    "Лор/Лор.md",
-    "Лор",
+    "Генерация/OpenWorld/Биомы/Биомы.md",
+    "Генерация/OpenWorld/Биомы/Лавовый биом.md",
+    "Генерация/OpenWorld/Биомы/Пустыня.md",
+    "Генерация/OpenWorld/Биомы/Снежная равнина.md",
+    "Генерация/OpenWorld/Биомы/Лес.md",
+    "Генерация/OpenWorld/Состояние мира/Состояние мира.md",
     "Генерация/OpenWorld/Состояние мира/Глобальные состояния.md",
+    "Лор/Лор.md",
+    "Генерация/OpenWorld/Биомы",
+    "3D slasher.md",
+    "Лор",
     "Генерация/OpenWorld/Состояние мира/Локальные события.md",
     "Генерация/OpenWorld/Состояние мира/Погодные условия.md",
     "Генерация/OpenWorld/OpenWorld.md",
@@ -219,7 +222,6 @@
     "Генерация/OpenWorld/Наполнение чанков.md",
     "Генерация/OpenWorld/Масштабирование сложности.md",
     "Генерация/Генерация.md",
-    "Генерация/OpenWorld/Состояние мира/Состояние мира.md",
     "Генерация/OpenWorld/Состояние мира/Реакция мира на игрока.md",
     "Генерация/OpenWorld/Состояние мира/Особые события.md",
     "Генерация/OpenWorld/Состояние мира",
