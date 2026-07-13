@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Генерация/OpenWorld/Биомы/Биомы.md",
-                "mode": "preview",
+                "file": "Генерация/OpenWorld/Биомы/Болото.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Биомы"
+              "title": "Болото"
             }
           }
         ]
@@ -199,12 +199,14 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "32448ffbcc5654dc",
+  "active": "823dceb78ec69faa",
   "lastOpenFiles": [
+    "Генерация/OpenWorld/Биомы/Мёртвый лес.md",
+    "Генерация/OpenWorld/Биомы/Болото.md",
     "Генерация/OpenWorld/Биомы/Биомы.md",
+    "Генерация/OpenWorld/Биомы/Лавовое озеро.md",
     "Генерация/OpenWorld/OpenWorld.md",
     "Генерация/OpenWorld/Биомы/Снежная равнина.md",
-    "Генерация/OpenWorld/Биомы/Лавовый биом.md",
     "Генерация/OpenWorld/Биомы/Пустыня.md",
     "Генерация/OpenWorld/Биомы/Лес.md",
     "Генерация/OpenWorld/Состояние мира/Состояние мира.md",
