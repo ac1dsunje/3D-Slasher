@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Генерация/OpenWorld/Биомы/Болото.md",
-                "mode": "source",
+                "file": "Генерация/OpenWorld/Биомы/Биомы.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Болото"
+              "title": "Биомы"
             }
           }
         ]
@@ -199,26 +199,27 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "32448ffbcc5654dc",
+  "active": "823dceb78ec69faa",
   "lastOpenFiles": [
-    "Генерация/OpenWorld/Биомы/Болото.md",
+    "Генерация/OpenWorld/Чем затягивает игрока.md",
+    "Генерация/OpenWorld/Прогресс предметов.md",
+    "Генерация/OpenWorld/Биомы/Лес.md",
+    "Генерация/Hades-Like/Чем затягивает игрока.md",
+    "Лор/Лор.md",
     "Генерация/OpenWorld/Биомы/Мёртвый лес.md",
+    "Генерация/OpenWorld/Биомы/Болото.md",
     "Генерация/OpenWorld/Биомы/Биомы.md",
     "Генерация/OpenWorld/Биомы/Лавовое озеро.md",
     "Генерация/OpenWorld/OpenWorld.md",
     "Генерация/OpenWorld/Биомы/Снежная равнина.md",
     "Генерация/OpenWorld/Биомы/Пустыня.md",
-    "Генерация/OpenWorld/Биомы/Лес.md",
     "Генерация/OpenWorld/Состояние мира/Состояние мира.md",
     "Генерация/OpenWorld/Состояние мира/Глобальные состояния.md",
-    "Лор/Лор.md",
     "Генерация/OpenWorld/Биомы",
     "3D slasher.md",
     "Лор",
     "Генерация/OpenWorld/Состояние мира/Локальные события.md",
     "Генерация/OpenWorld/Состояние мира/Погодные условия.md",
-    "Генерация/OpenWorld/Чем затягивает игрока.md",
-    "Генерация/OpenWorld/Прогресс предметов.md",
     "Генерация/OpenWorld/Почему игрок идёт дальше.md",
     "Генерация/OpenWorld/Подземелья.md",
     "Генерация/OpenWorld/Наполнение чанков.md",
@@ -228,7 +229,6 @@
     "Генерация/OpenWorld/Состояние мира/Особые события.md",
     "Генерация/OpenWorld/Состояние мира",
     "Генерация/Hades-Like/Hades-Like.md",
-    "Генерация/Hades-Like/Чем затягивает игрока.md",
     "Генерация/Hades-Like",
     "Генерация/OpenWorld",
     "Генерация"
