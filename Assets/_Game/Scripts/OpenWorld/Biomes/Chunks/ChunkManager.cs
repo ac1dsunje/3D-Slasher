@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _Game.Scripts.OpenWorld.Sun;
 using UnityEngine;
 
 namespace _Game.Scripts.OpenWorld.Biomes.Chunks
@@ -19,16 +20,30 @@ public class ChunkManager : MonoBehaviour
 
     private Transform _player;
     private BiomeManager _biomeManager;
+    private SunsManager _sunsManager;
+    private SunFaces _type;
 
-    public void Construct(Transform player, BiomeManager biomeManager)
+    public void Construct(Transform player, BiomeManager biomeManager, SunsManager sunsManager)
     {
         _player = player;
         _biomeManager = biomeManager;
+        _sunsManager = sunsManager;
+
+        _sunsManager.OnSunFaceChanged += UpdateSunFace;
     }
 
     private void Update()
     {
         UpdateChunksAroundPlayer();
+    }
+
+    private void UpdateSunFace(SunFace sunFace)
+    {
+        _type = sunFace.Type;
+        foreach (var chunk in _loadedChunks)
+        {
+            chunk.Value.UpdateSunFace(_type);
+        }
     }
 
     private void UpdateChunksAroundPlayer()
@@ -70,12 +85,14 @@ public class ChunkManager : MonoBehaviour
         if (_unloadedChunks.Remove(gridPos, out var chunk))
         {
             chunk.gameObject.SetActive(true);
+            chunk.UpdateSunFace(_type);
         }
         else
         {
             var biome = _biomeManager.GetBiomeAt(gridPos);
             chunk = Instantiate(_chunkPrefab, transform);
             chunk.Initialize(gridPos, biome, _chunkSize);
+            chunk.UpdateSunFace(_type);
         }
 
         _loadedChunks[gridPos] = chunk;
@@ -94,6 +111,11 @@ public class ChunkManager : MonoBehaviour
         var x = Mathf.FloorToInt(worldPos.x / _chunkSize);
         var y = Mathf.FloorToInt(worldPos.z / _chunkSize);
         return new Vector2Int(x, y);
+    }
+
+    private void OnDestroy()
+    {
+        _sunsManager.OnSunFaceChanged -= UpdateSunFace;
     }
 }
 }

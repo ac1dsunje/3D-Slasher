@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _Game.Scripts.OpenWorld.Biomes.Structures;
 using _Game.Scripts.OpenWorld.Sun;
 using _Game.Scripts.Player;
 using UnityEngine;
@@ -9,14 +10,15 @@ public class ChunkController: MonoBehaviour
 {
     [SerializeField] private Transform[] _points;
     [SerializeField] private Transform _centralPoint;
+    [SerializeField] private SunFaces _testType = SunFaces.Clear;
     private Biome _biome;
     private BiomeContent _biomeContent;
     private Renderer _renderer;
     private readonly List<Transform> _freePoints = new();
 
-    private readonly List<GameObject> _buildings = new();
-    private readonly List<GameObject> _environments = new();
-    private readonly List<GameObject> _specialObjects = new();
+    private StructureController _building;
+    private readonly List<StructureController> _environments = new();
+    private readonly List<StructureController> _specialObjects = new();
 
     private const float ChunkOffset = 0.5f;
 
@@ -40,14 +42,14 @@ public class ChunkController: MonoBehaviour
         ApplyBiome();
     }
 
-    public void UpdateSunFace(SunFace sunFace)
+    public void UpdateSunFace(SunFaces type)
     {
-        if (sunFace.Type == _biomeContent.Type) return;
-        foreach (var t in _biome.Contents)
+        if (type == _biomeContent.Type) return;
+        foreach (var content in _biome.Contents)
         {
-            if (t.Type != sunFace.Type) continue;
+            if (content.Type != type) continue;
             
-            _biomeContent = t;
+            _biomeContent = content;
             UpdateBiomeContent();
             return;
         }
@@ -73,18 +75,25 @@ public class ChunkController: MonoBehaviour
         SetBiomeColor();
 
         CreateBuilding();
-
         CreateSpecialObject();
-        
         CreateEnvironment();
     }
 
     private void UpdateBiomeContent()
     {
         SetBiomeColor();
-        UpdateBuilding();
-        UpdateSpecialObject();
-        UpdateEnvironment();
+
+        _building?.UpdateType(_biomeContent.Type);
+
+        foreach (var specialObject in _specialObjects)
+        {
+            specialObject.UpdateType(_biomeContent.Type);
+        }
+
+        foreach (var environment in _environments)
+        {
+            environment.UpdateType(_biomeContent.Type);
+        }
     }
 
     private void SetBiomeColor()
@@ -102,14 +111,8 @@ public class ChunkController: MonoBehaviour
         if (_biomeContent.Buildings.Length == 0) return;
         if (!GetSpawnPossibility(_biome.BuildingChance)) return;
         var rand = Random.Range(0, _biomeContent.Buildings.Length);
-        var building = CreateObject(_biomeContent.Buildings[rand], _centralPoint);
+        _building = CreateBiomeStructure(_biomeContent.Buildings[rand], _centralPoint);
         _freePoints.Clear();
-        _buildings.Add(building);
-    }
-
-    private void UpdateBuilding()
-    {
-        //ToDo: implement update building method;
     }
 
     private void CreateSpecialObject()
@@ -118,14 +121,9 @@ public class ChunkController: MonoBehaviour
         if (!GetSpawnPossibility(_biome.SpecialChance)) return;
         var rand = Random.Range(0, _biomeContent.SpecialObjects.Length);
         var randPoint = Random.Range(0, _freePoints.Count);
-        var special = CreateObject(_biomeContent.SpecialObjects[rand], _points[randPoint]);
+        var special = CreateBiomeStructure(_biomeContent.SpecialObjects[rand], _points[randPoint]);
         _freePoints.Remove(_points[randPoint]);
         _specialObjects.Add(special);
-    }
-
-    private void UpdateSpecialObject()
-    {
-        //ToDo: implement update special object method;
     }
 
     private void CreateEnvironment()
@@ -141,13 +139,8 @@ public class ChunkController: MonoBehaviour
     {
         if (!GetSpawnPossibility(_biome.EnvironmentChance)) return;
         var rand = Random.Range(0, _biomeContent.Environments.Length);
-        var environment = CreateObject(_biomeContent.Environments[rand], position);
+        var environment = CreateBiomeStructure(_biomeContent.Environments[rand], position);
         _environments.Add(environment);
-    }
-
-    private void UpdateEnvironment()
-    {
-        //Todo: implement update environments method;
     }
 
     private bool GetSpawnPossibility(int chance)
@@ -156,9 +149,11 @@ public class ChunkController: MonoBehaviour
         return spawnChance >= chance;
     }
 
-    private GameObject CreateObject(GameObject obj, Transform parent)
+    private StructureController CreateBiomeStructure(GameObject obj, Transform parent)
     {
-        return Instantiate(obj, parent.position, Quaternion.identity, parent);
+        var structure = Instantiate(obj, parent.position, Quaternion.identity, parent).GetComponent<StructureController>();
+        structure.UpdateType(_biomeContent.Type);
+        return structure;
     }
 
     private void OnCollisionEnter(Collision collision)

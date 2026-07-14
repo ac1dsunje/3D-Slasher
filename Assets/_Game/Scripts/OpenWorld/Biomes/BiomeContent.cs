@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using _Game.Scripts.OpenWorld.Sun;
 
 namespace _Game.Scripts.OpenWorld.Biomes

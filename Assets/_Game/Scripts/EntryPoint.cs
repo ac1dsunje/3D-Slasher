@@ -26,7 +26,7 @@ public class EntryPoint : MonoBehaviour
     private void Awake()
     {
         _cameraController.Construct(_player.transform);
-        _chunkManager.Construct(_player.transform, _biomeManager);
+        _chunkManager.Construct(_player.transform, _biomeManager, _sunsManager);
         _lightController.Construct(_timeController);
         _sunsManager.Construct(_lightController, _timeController);
 

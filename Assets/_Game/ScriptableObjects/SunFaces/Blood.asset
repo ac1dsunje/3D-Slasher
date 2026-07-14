@@ -16,5 +16,5 @@ MonoBehaviour:
   <FaceName>k__BackingField: Blood
   <BaseColor>k__BackingField: {r: 1, g: 0, b: 0, a: 1}
   <Image>k__BackingField: {fileID: 7342601156616462119, guid: e474bd846465b3341ae99cbf2202bc98, type: 3}
-  <MinDuration>k__BackingField: 2
-  <MaxDuration>k__BackingField: 7
+  <MinDuration>k__BackingField: 1
+  <MaxDuration>k__BackingField: 2

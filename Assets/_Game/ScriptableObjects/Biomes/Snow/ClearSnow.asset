@@ -16,7 +16,7 @@ MonoBehaviour:
   <BaseColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
   <Buildings>k__BackingField: []
   <Environments>k__BackingField:
-  - {fileID: 8066893594861025916, guid: b4162e0cf95b556429ba293bad0bab51, type: 3}
+  - {fileID: 7661616296671889351, guid: d3cc6647eccc5e84fbc6835331955d94, type: 3}
   <SpecialObjects>k__BackingField: []
   <Enemies>k__BackingField: []
   <Music>k__BackingField: []
