@@ -4,8 +4,6 @@ namespace _Game.Scripts.OpenWorld.Sun
 {
 public class LightController : MonoBehaviour
 {
-    [Header("Day/Night")]
-    [SerializeField] private AnimationCurve _lightCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     [SerializeField] private Vector3 _rotationOffset = new(-90f, 0f, 0f);
 
     private Light _light;
@@ -24,7 +22,7 @@ public class LightController : MonoBehaviour
 
     private void Update()
     {
-        if (_currentSunFace == null || _worldTime == null)
+        if (!_currentSunFace || !_worldTime)
             return;
 
         UpdateRotation();
@@ -41,7 +39,7 @@ public class LightController : MonoBehaviour
 
     private void UpdateRotation()
     {
-        float angle = _worldTime.NormalizedTime * 360f;
+        var angle = _worldTime.NormalizedTime * 360f;
 
         transform.rotation = Quaternion.Euler(
             angle + _rotationOffset.x,

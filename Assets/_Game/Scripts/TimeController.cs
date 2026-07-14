@@ -22,15 +22,17 @@ public class TimeController : MonoBehaviour
     [Header("Current Info")]
     [SerializeField] private int _currentDay = 1;
     [SerializeField] private float _timeOfDay;
-    [SerializeField] private TimeState _currentState;
+    
+    private TimeState _currentState;
     public float NormalizedTime => _timeOfDay / 24f;
 
     public event Action<int> OnDayChanged;
+    public event Action<TimeState> OnTimeStateChanged;
 
     private void Update()
     {
         _timeOfDay += (24f / _dayLengthInSeconds) * Time.deltaTime;
-        _currentState = GetCurrentTimeState;
+        _currentState = GetTimeState();
 
         if (_timeOfDay < 24f) return;
         UpdateDayCount();
@@ -43,22 +45,39 @@ public class TimeController : MonoBehaviour
 
         OnDayChanged?.Invoke(_currentDay);
     }
-    
-    private TimeState GetCurrentTimeState
+
+    private TimeState GetTimeState()
     {
-        get
+        TimeState state;
+        switch (_timeOfDay)
         {
-            return _timeOfDay switch
-            {
-                >= 0f and < 4f => TimeState.Midnight,
-                >= 4f and < 7f => TimeState.Dawn,
-                >= 7f and < 12f => TimeState.Morning,
-                >= 12f and < 17f => TimeState.Day,
-                >= 17f and < 19f => TimeState.Evening,
-                >= 19f and < 21f => TimeState.Sunset,
-                _ => TimeState.Night
-            };
+            case >= 0f and < 4f: 
+                state = TimeState.Midnight;
+                break;
+            case >= 4f and < 7f: 
+                state = TimeState.Dawn;
+                break;
+            case >= 7f and < 12f:
+                state = TimeState.Morning;
+                break;
+            case >= 12f and < 17f:
+                state = TimeState.Day;
+                break;
+            case >= 17f and < 19f:
+                state = TimeState.Evening;
+                break;
+            case >= 19f and < 21f:
+                state = TimeState.Sunset;
+                break;
+            default:
+                state = TimeState.Night;
+                break;
+        };
+        if (state != _currentState)
+        {
+            OnTimeStateChanged?.Invoke(state);
         }
+        return state;
     }
 }
 }

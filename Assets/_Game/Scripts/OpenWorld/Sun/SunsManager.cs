@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _Game.Scripts.OpenWorld.Sun
 {
@@ -10,6 +12,8 @@ public class SunsManager: MonoBehaviour
     private TimeController _timeController;
     private int _faceIndex;
     private int _currentFaceDuration;
+
+    public event Action<SunFace> OnSunFaceChanged;
 
     public void Construct(LightController lightController, TimeController timeController)
     {
@@ -42,6 +46,7 @@ public class SunsManager: MonoBehaviour
     {
         _currentFaceDuration = Random.Range(sunFace.MinDuration, sunFace.MaxDuration + 1);
         _lightController.SetSunFace(sunFace);
+        OnSunFaceChanged?.Invoke(sunFace);
     }
 }
 }

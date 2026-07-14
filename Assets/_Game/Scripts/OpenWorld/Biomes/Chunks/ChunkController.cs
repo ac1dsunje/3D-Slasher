@@ -52,6 +52,10 @@ public class ChunkController: MonoBehaviour
         SetBiomeColor();
         
         FillSpawnPossibilities();
+
+        CreateBuilding();
+
+        CreateSpecialObject();
         
         CreateEnvironment();
     }
@@ -66,6 +70,25 @@ public class ChunkController: MonoBehaviour
         _renderer.material = mat;
     }
 
+    private void CreateBuilding()
+    {
+        if (_biome.Buildings.Length == 0) return;
+        if (!GetSpawnPossibility(_biome.BuildingChance)) return;
+        var rand = Random.Range(0, _biome.Buildings.Length);
+        CreateObject(_biome.Buildings[rand], _centralPoint);
+        _freePoints.Clear();
+    }
+
+    private void CreateSpecialObject()
+    {
+        if (_biome.SpecialObjects.Length == 0) return;
+        if (!GetSpawnPossibility(_biome.SpecialChance)) return;
+        var rand = Random.Range(0, _biome.SpecialObjects.Length);
+        var randPoint = Random.Range(0, _freePoints.Count);
+        CreateObject(_biome.SpecialObjects[rand], _points[randPoint]);
+        _freePoints.Remove(_points[randPoint]);
+    }
+
     private void CreateEnvironment()
     {
         if (_biome.Environments.Length == 0) return;
@@ -77,7 +100,7 @@ public class ChunkController: MonoBehaviour
 
     private void TrySetRandomEnvironment(Transform position)
     {
-        if (!GetSpawnPossibility(_biome.EnvChance)) return;
+        if (!GetSpawnPossibility(_biome.EnvironmentChance)) return;
         var rand = Random.Range(0, _biome.Environments.Length);
         CreateObject(_biome.Environments[rand], position);
     }
