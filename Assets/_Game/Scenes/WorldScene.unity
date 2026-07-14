@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 47b7a45414f3b564e9e8349bfa18b29f, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 410087040}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 410087041}
   - component: {fileID: 410087040}
   - component: {fileID: 410087042}
+  - component: {fileID: 410087043}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -300,7 +301,7 @@ Light:
   serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -398,6 +399,18 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &410087043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410087039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32c59f8ebb854cdbb12534dc34e13372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.Sun.SunController
 --- !u!114 &466656144 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9197605188499209124, guid: 72b6bb6f86b30ea41ad086d0bb27fa68, type: 3}
@@ -506,6 +519,8 @@ MonoBehaviour:
   _chunkManager: {fileID: 2013069885}
   _biomeManager: {fileID: 2013069886}
   _cameraController: {fileID: 330585548}
+  _sunController: {fileID: 410087043}
+  _sunsManager: {fileID: 2013069887}
 --- !u!1 &2013069883
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +532,7 @@ GameObject:
   - component: {fileID: 2013069884}
   - component: {fileID: 2013069885}
   - component: {fileID: 2013069886}
+  - component: {fileID: 2013069887}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -574,6 +590,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9ecfdbfb2eacc7748b75e1257294087a, type: 2}
   _noiseScale: 15
   _seed: 0
+--- !u!114 &2013069887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013069883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e402a89d95ba4c5fb912176456efa7ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.Sun.SunsManager
+  _sunFaces:
+  - {fileID: 11400000, guid: 62be616650c01e843a462c60bc38d4c8, type: 2}
+  - {fileID: 11400000, guid: 803c7769343c9b946a4c5bf2b9bac2be, type: 2}
+  - {fileID: 11400000, guid: f45369da1c3d35d47a1c5d69c5da902f, type: 2}
 --- !u!1001 &6128495493943999844
 PrefabInstance:
   m_ObjectHideFlags: 0
