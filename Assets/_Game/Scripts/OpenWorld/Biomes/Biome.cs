@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Game.Scripts.Biomes
+namespace _Game.Scripts.OpenWorld.Biomes
 {
 [CreateAssetMenu(fileName = "NewBiome", menuName = "Game/World/Biome")]
 public class Biome : ScriptableObject

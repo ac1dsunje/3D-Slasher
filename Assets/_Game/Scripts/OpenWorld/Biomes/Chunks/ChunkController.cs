@@ -1,7 +1,7 @@
 ﻿using _Game.Scripts.Player;
 using UnityEngine;
 
-namespace _Game.Scripts.Biomes.Chunks
+namespace _Game.Scripts.OpenWorld.Biomes.Chunks
 {
 public class ChunkController: MonoBehaviour
 {

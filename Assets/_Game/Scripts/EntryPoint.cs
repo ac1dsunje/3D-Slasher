@@ -1,7 +1,7 @@
-using _Game.Scripts.Biomes;
-using _Game.Scripts.Biomes.Chunks;
+using _Game.Scripts.OpenWorld.Biomes;
+using _Game.Scripts.OpenWorld.Biomes.Chunks;
+using _Game.Scripts.OpenWorld.Sun;
 using _Game.Scripts.Player;
-using _Game.Scripts.Sun;
 using UnityEngine;
 
 namespace _Game.Scripts

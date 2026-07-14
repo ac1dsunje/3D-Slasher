@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace _Game.Scripts.Biomes.Chunks
+namespace _Game.Scripts.OpenWorld.Biomes.Chunks
 {
 public class ChunkManager : MonoBehaviour
 {

@@ -1,4 +1,4 @@
-using _Game.Scripts.Biomes;
+using _Game.Scripts.OpenWorld.Biomes;
 using UnityEngine;
 
 namespace _Game.Scripts.Player

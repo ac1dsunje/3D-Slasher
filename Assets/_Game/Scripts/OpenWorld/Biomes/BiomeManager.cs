@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Game.Scripts.Biomes
+namespace _Game.Scripts.OpenWorld.Biomes
 {
 public class BiomeManager: MonoBehaviour
 {

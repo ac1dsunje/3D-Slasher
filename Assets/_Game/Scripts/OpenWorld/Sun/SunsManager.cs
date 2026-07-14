@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Game.Scripts.Sun
+namespace _Game.Scripts.OpenWorld.Sun
 {
 public class SunsManager: MonoBehaviour
 {

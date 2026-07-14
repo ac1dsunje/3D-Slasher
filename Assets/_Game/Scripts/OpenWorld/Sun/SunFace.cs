@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Game.Scripts.Sun
+namespace _Game.Scripts.OpenWorld.Sun
 {
 [CreateAssetMenu(fileName = "NewSunFace", menuName = "Game/World/Sun Face")]
 public class SunFace : ScriptableObject
