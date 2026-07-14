@@ -16,3 +16,5 @@ MonoBehaviour:
   <BaseColor>k__BackingField: {r: 1, g: 0, b: 0, a: 1}
   <MinIntensity>k__BackingField: 0
   <MaxIntensity>k__BackingField: 2
+  <MinDuration>k__BackingField: 1
+  <MaxDuration>k__BackingField: 3

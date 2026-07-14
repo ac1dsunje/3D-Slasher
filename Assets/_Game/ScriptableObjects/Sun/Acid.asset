@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60efd4d4815b4eef8d769e570a48a818, type: 3}
   m_Name: Acid
   m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.Sun.SunFace
-  <FaceName>k__BackingField: Blood
+  <FaceName>k__BackingField: Acid
   <BaseColor>k__BackingField: {r: 0, g: 1, b: 0.21296191, a: 1}
-  <MinIntensity>k__BackingField: 0
-  <MaxIntensity>k__BackingField: 2
+  <MinDuration>k__BackingField: 1
+  <MaxDuration>k__BackingField: 10

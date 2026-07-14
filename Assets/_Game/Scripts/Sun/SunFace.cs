@@ -7,7 +7,7 @@ public class SunFace : ScriptableObject
 {
     [field: SerializeField] public string FaceName { get; private set; }
     [field: SerializeField] public Color BaseColor { get; private set; } = Color.white;
-    [field: SerializeField] public float MinIntensity { get; private set; } = 1.0f;
-    [field: SerializeField] public float MaxIntensity { get; private set; } = 1.0f;
+    [field: SerializeField] public int MinDuration { get; private set; } = 1;
+    [field: SerializeField] public int MaxDuration { get; private set; } = 5;
 }
 }

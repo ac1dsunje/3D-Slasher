@@ -14,13 +14,15 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private CameraController _cameraController;
     [SerializeField] private LightController _lightController;
     [SerializeField] private SunsManager _sunsManager;
+    [SerializeField] private TimeController _timeController;
 
     private void Awake()
     {
         _cameraController.Construct(_player.transform);
         _chunkManager.Construct(_player.transform, _biomeManager);
         _player.transform.position = new Vector3(0, 1, 0);
-        _sunsManager.Construct(_lightController);
+        _lightController.Construct(_timeController);
+        _sunsManager.Construct(_lightController, _timeController);
     }
 }
 }
