@@ -149,9 +149,9 @@ public class ChunkController: MonoBehaviour
         return spawnChance >= chance;
     }
 
-    private StructureController CreateBiomeStructure(GameObject obj, Transform parent)
+    private StructureController CreateBiomeStructure(StructureController obj, Transform parent)
     {
-        var structure = Instantiate(obj, parent.position, Quaternion.identity, parent).GetComponent<StructureController>();
+        var structure = Instantiate(obj, parent.position, Quaternion.identity, parent);
         structure.UpdateType(_biomeContent.Type);
         return structure;
     }
