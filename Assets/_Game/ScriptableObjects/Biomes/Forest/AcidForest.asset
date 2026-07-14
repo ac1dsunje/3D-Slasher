@@ -14,8 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.OpenWorld.Biomes.BiomeContent
   <Type>k__BackingField: 2
   <BaseColor>k__BackingField: {r: 0, g: 1, b: 0, a: 1}
-  <Buildings>k__BackingField: []
-  <Environments>k__BackingField: []
-  <SpecialObjects>k__BackingField: []
-  <Enemies>k__BackingField: []
   <Music>k__BackingField: []

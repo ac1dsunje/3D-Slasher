@@ -10,12 +10,14 @@ namespace _Game.Scripts
 public class EntryPoint : MonoBehaviour
 {
     [SerializeField] private PlayerController _player;
-    [SerializeField] private ChunkManager _chunkManager;
-    [SerializeField] private BiomeManager _biomeManager;
     [SerializeField] private CameraController _cameraController;
     [SerializeField] private LightController _lightController;
+    
+    [Header("World")]
     [SerializeField] private SunsManager _sunsManager;
     [SerializeField] private TimeController _timeController;
+    [SerializeField] private ChunkManager _chunkManager;
+    [SerializeField] private BiomeManager _biomeManager;
 
     [Header("UI")]
     [SerializeField] private OverlayUIManager _overlay;

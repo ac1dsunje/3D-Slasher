@@ -698,12 +698,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.EntryPoint
   _player: {fileID: 466656144}
-  _chunkManager: {fileID: 2013069885}
-  _biomeManager: {fileID: 2013069886}
   _cameraController: {fileID: 330585548}
   _lightController: {fileID: 410087043}
   _sunsManager: {fileID: 2013069887}
   _timeController: {fileID: 2013069888}
+  _chunkManager: {fileID: 2013069885}
+  _biomeManager: {fileID: 2013069886}
   _overlay: {fileID: 8288791784932246693}
 --- !u!1 &2013069883
 GameObject:
@@ -752,7 +752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d8e47a6136427ebc46ec250b46561b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.Biomes.Chunks.ChunkManager
-  _chunkPrefab: {fileID: 3677667573439506752, guid: c58b35fe0e0676845aef296e75cf2438, type: 3}
+  _chunkPrefab: {fileID: 2441263301140715235, guid: c58b35fe0e0676845aef296e75cf2438, type: 3}
   _chunkSize: 10
   _viewRadius: 10
 --- !u!114 &2013069886

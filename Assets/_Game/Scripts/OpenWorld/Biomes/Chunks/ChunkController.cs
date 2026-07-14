@@ -10,7 +10,7 @@ public class ChunkController: MonoBehaviour
 {
     [SerializeField] private Transform[] _points;
     [SerializeField] private Transform _centralPoint;
-    [SerializeField] private SunFaces _testType = SunFaces.Clear;
+    
     private Biome _biome;
     private BiomeContent _biomeContent;
     private Renderer _renderer;
@@ -108,27 +108,27 @@ public class ChunkController: MonoBehaviour
 
     private void CreateBuilding()
     {
-        if (_biomeContent.Buildings.Length == 0) return;
+        if (_biome.Buildings.Length == 0) return;
         if (!GetSpawnPossibility(_biome.BuildingChance)) return;
-        var rand = Random.Range(0, _biomeContent.Buildings.Length);
-        _building = CreateBiomeStructure(_biomeContent.Buildings[rand], _centralPoint);
+        var rand = Random.Range(0, _biome.Buildings.Length);
+        _building = CreateBiomeStructure(_biome.Buildings[rand], _centralPoint);
         _freePoints.Clear();
     }
 
     private void CreateSpecialObject()
     {
-        if (_biomeContent.SpecialObjects.Length == 0) return;
+        if (_biome.SpecialObjects.Length == 0) return;
         if (!GetSpawnPossibility(_biome.SpecialChance)) return;
-        var rand = Random.Range(0, _biomeContent.SpecialObjects.Length);
+        var rand = Random.Range(0, _biome.SpecialObjects.Length);
         var randPoint = Random.Range(0, _freePoints.Count);
-        var special = CreateBiomeStructure(_biomeContent.SpecialObjects[rand], _points[randPoint]);
+        var special = CreateBiomeStructure(_biome.SpecialObjects[rand], _points[randPoint]);
         _freePoints.Remove(_points[randPoint]);
         _specialObjects.Add(special);
     }
 
     private void CreateEnvironment()
     {
-        if (_biomeContent.Environments.Length == 0) return;
+        if (_biome.Environments.Length == 0) return;
         foreach (var point in _freePoints)
         {
             TrySetRandomEnvironment(point);
@@ -138,8 +138,8 @@ public class ChunkController: MonoBehaviour
     private void TrySetRandomEnvironment(Transform position)
     {
         if (!GetSpawnPossibility(_biome.EnvironmentChance)) return;
-        var rand = Random.Range(0, _biomeContent.Environments.Length);
-        var environment = CreateBiomeStructure(_biomeContent.Environments[rand], position);
+        var rand = Random.Range(0, _biome.Environments.Length);
+        var environment = CreateBiomeStructure(_biome.Environments[rand], position);
         _environments.Add(environment);
     }
 
