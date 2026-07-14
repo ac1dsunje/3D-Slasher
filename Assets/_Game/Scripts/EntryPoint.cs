@@ -20,7 +20,6 @@ public class EntryPoint : MonoBehaviour
     {
         _cameraController.Construct(_player.transform);
         _chunkManager.Construct(_player.transform, _biomeManager);
-        _player.transform.position = new Vector3(0, 1, 0);
         _lightController.Construct(_timeController);
         _sunsManager.Construct(_lightController, _timeController);
     }
