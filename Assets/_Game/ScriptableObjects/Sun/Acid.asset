@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.Sun.SunFace
   <FaceName>k__BackingField: Acid
   <BaseColor>k__BackingField: {r: 0, g: 1, b: 0.21296191, a: 1}
+  <Image>k__BackingField: {fileID: -4152023031257694920, guid: 2981c46e423280e45a06126056a5e77f, type: 3}
   <MinDuration>k__BackingField: 1
   <MaxDuration>k__BackingField: 10

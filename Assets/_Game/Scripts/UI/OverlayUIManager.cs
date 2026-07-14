@@ -1,13 +1,14 @@
 ﻿using _Game.Scripts.OpenWorld.Sun;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Game.Scripts.UI
 {
 public class OverlayUIManager: ScreenManager
 {
     [SerializeField] private TextMeshProUGUI _timeStateText;
-    [SerializeField] private TextMeshProUGUI _sunFaceText;
+    [SerializeField] private Image _sunFaceImage;
 
     private TimeController _timeController;
     private SunsManager _sunsManager;
@@ -28,7 +29,7 @@ public class OverlayUIManager: ScreenManager
     
     private void SetSunFaceText(SunFace sunFace)
     {
-        _sunFaceText.text = sunFace.FaceName;
+        _sunFaceImage.sprite = sunFace.Image;
     }
 
     private void OnDestroy()

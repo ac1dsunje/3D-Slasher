@@ -33,8 +33,6 @@ public class LightController : MonoBehaviour
         _currentSunFace = sunFace;
 
         _light.color = sunFace.BaseColor;
-
-        Debug.Log($"{sunFace.FaceName} Sun is watching this world.");
     }
 
     private void UpdateRotation()

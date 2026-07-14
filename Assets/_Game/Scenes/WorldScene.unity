@@ -411,30 +411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c59f8ebb854cdbb12534dc34e13372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.Sun.SunController
-  _lightCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   _rotationOffset: {x: -90, y: 0, z: 0}
 --- !u!114 &466656144 stripped
 MonoBehaviour:
@@ -447,17 +423,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f45757240ea0544bee59c90d944815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
---- !u!114 &723372923 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5162467229701651375, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
-  m_PrefabInstance: {fileID: 8288791784932246691}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +806,6 @@ MonoBehaviour:
   _dayLengthInSeconds: 1200
   _currentDay: 1
   _timeOfDay: 0
-  _currentState: 0
 --- !u!1001 &6128495493943999844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -907,13 +871,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 859868992}
     m_Modifications:
-    - target: {fileID: 828121102182072142, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
+    - target: {fileID: 2096469198392683406, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -760569459194559623, guid: f416ebac80941d94ea7f60b846a7c84d, type: 3}
+    - target: {fileID: 3785041620146072733, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
       propertyPath: m_Color.a
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4711209654866120100, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
-      propertyPath: m_text
-      value: day
       objectReference: {fileID: 0}
     - target: {fileID: 4715689399489285911, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
       propertyPath: m_Pivot.x
@@ -996,37 +960,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4972249144770561727, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4972249144770561727, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4972249144770561727, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4972249144770561727, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 4972249144770561727, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5162467229701651375, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
-      propertyPath: m_text
-      value: Clear
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 5340621979757698391, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
       propertyPath: m_Name
       value: Overlay
       objectReference: {fileID: 0}
-    - target: {fileID: 7286933852564197974, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
-      propertyPath: _sunFaceText
-      value: 
-      objectReference: {fileID: 723372923}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
