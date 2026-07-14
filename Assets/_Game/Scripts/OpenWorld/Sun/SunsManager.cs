@@ -4,6 +4,13 @@ using Random = UnityEngine.Random;
 
 namespace _Game.Scripts.OpenWorld.Sun
 {
+public enum SunFaces
+{
+    Clear,
+    Blood, 
+    Acid
+}
+
 public class SunsManager: MonoBehaviour
 {
     [SerializeField] private SunFace[] _sunFaces;

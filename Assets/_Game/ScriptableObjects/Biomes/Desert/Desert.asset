@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: Desert
   m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.Biomes.Biome
   <BiomeName>k__BackingField: Desert
-  <BaseColor>k__BackingField: {r: 1, g: 0.8431373, b: 0, a: 1}
+  <Contents>k__BackingField:
+  - {fileID: 11400000, guid: 756b719626c89364fba35449ea6eae26, type: 2}
+  - {fileID: 11400000, guid: 394eeed354a3e3047be6461f02e9828d, type: 2}
+  - {fileID: 11400000, guid: 702a9065da84029449818cf35a8e64fa, type: 2}
+  <SpecialChance>k__BackingField: 30
+  <EnvironmentChance>k__BackingField: 50
+  <BuildingChance>k__BackingField: 10

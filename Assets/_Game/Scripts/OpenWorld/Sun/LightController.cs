@@ -22,7 +22,7 @@ public class LightController : MonoBehaviour
 
     private void Update()
     {
-        if (!_currentSunFace || !_worldTime)
+        if (_currentSunFace == null || !_worldTime)
             return;
 
         UpdateRotation();

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 256679e95f2443b48f1d85c009b0ed66, type: 3}
-  m_Name: Forest
+  m_Name: Snow
   m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.Biomes.Biome
-  <BiomeName>k__BackingField: Forest
-  <BaseColor>k__BackingField: {r: 0.5490196, g: 0.7882354, b: 0.1411765, a: 1}
-  <Buildings>k__BackingField: []
-  <Environments>k__BackingField:
-  - {fileID: 8066893594861025916, guid: b4162e0cf95b556429ba293bad0bab51, type: 3}
-  <SpecialObjects>k__BackingField: []
-  <Enemies>k__BackingField: []
-  <Music>k__BackingField: []
+  <BiomeName>k__BackingField: Snow
+  <Contents>k__BackingField:
+  - {fileID: 11400000, guid: 12176197ff172ee43bb61cfef6dbc8fc, type: 2}
+  - {fileID: 11400000, guid: 000ec64dd4cd9be449c5c78b8aa12b3a, type: 2}
+  - {fileID: 11400000, guid: 2b6f1e83e0779f74c97932972ee569f6, type: 2}
+  <SpecialChance>k__BackingField: 30
+  <EnvironmentChance>k__BackingField: 50
+  <BuildingChance>k__BackingField: 10

@@ -788,9 +788,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.Sun.SunsManager
   _sunFaces:
-  - {fileID: 11400000, guid: 62be616650c01e843a462c60bc38d4c8, type: 2}
-  - {fileID: 11400000, guid: 803c7769343c9b946a4c5bf2b9bac2be, type: 2}
-  - {fileID: 11400000, guid: f45369da1c3d35d47a1c5d69c5da902f, type: 2}
+  - {fileID: 11400000, guid: 4b868d61725af5547a26f74bb54a5620, type: 2}
+  - {fileID: 11400000, guid: e6ce7f953b413fb4daccbe8bdfcb67aa, type: 2}
+  - {fileID: 11400000, guid: 5363cae5ad49e5d4c8e177fa743f551a, type: 2}
 --- !u!114 &2013069888
 MonoBehaviour:
   m_ObjectHideFlags: 0

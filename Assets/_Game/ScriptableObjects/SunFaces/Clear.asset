@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60efd4d4815b4eef8d769e570a48a818, type: 3}
-  m_Name: Acid
-  m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.Sun.SunFace
-  <FaceName>k__BackingField: Acid
-  <BaseColor>k__BackingField: {r: 0, g: 1, b: 0.21296191, a: 1}
-  <Image>k__BackingField: {fileID: -4152023031257694920, guid: 2981c46e423280e45a06126056a5e77f, type: 3}
-  <MinDuration>k__BackingField: 1
+  m_Name: Clear
+  m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.OpenWorld.Sun.SunFace
+  <Type>k__BackingField: 0
+  <FaceName>k__BackingField: Clear
+  <BaseColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+  <Image>k__BackingField: {fileID: -760569459194559623, guid: f416ebac80941d94ea7f60b846a7c84d, type: 3}
+  <MinDuration>k__BackingField: 3
   <MaxDuration>k__BackingField: 10

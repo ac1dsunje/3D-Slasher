@@ -10,7 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 256679e95f2443b48f1d85c009b0ed66, type: 3}
-  m_Name: Snow
+  m_Name: Lava
   m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.Biomes.Biome
-  <BiomeName>k__BackingField: Snow
-  <BaseColor>k__BackingField: {r: 1, g: 1, b: 0.8784314, a: 1}
+  <BiomeName>k__BackingField: Lava
+  <Contents>k__BackingField:
+  - {fileID: 11400000, guid: 2009448502cb20140a87a461d9bf9793, type: 2}
+  - {fileID: 11400000, guid: 61537b713c787c8489aaf1e24cc5654a, type: 2}
+  - {fileID: 11400000, guid: 4aa3a19c3ddf15447bc31147a85fa2b6, type: 2}
+  <SpecialChance>k__BackingField: 30
+  <EnvironmentChance>k__BackingField: 50
+  <BuildingChance>k__BackingField: 10

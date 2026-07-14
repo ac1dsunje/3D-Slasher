@@ -11,9 +11,10 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60efd4d4815b4eef8d769e570a48a818, type: 3}
   m_Name: Blood
-  m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.Sun.SunFace
+  m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.OpenWorld.Sun.SunFace
+  <Type>k__BackingField: 1
   <FaceName>k__BackingField: Blood
   <BaseColor>k__BackingField: {r: 1, g: 0, b: 0, a: 1}
   <Image>k__BackingField: {fileID: 7342601156616462119, guid: e474bd846465b3341ae99cbf2202bc98, type: 3}
-  <MinDuration>k__BackingField: 1
-  <MaxDuration>k__BackingField: 3
+  <MinDuration>k__BackingField: 2
+  <MaxDuration>k__BackingField: 7

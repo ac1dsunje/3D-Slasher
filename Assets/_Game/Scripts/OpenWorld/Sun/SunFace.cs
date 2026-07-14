@@ -2,9 +2,10 @@
 
 namespace _Game.Scripts.OpenWorld.Sun
 {
-[CreateAssetMenu(fileName = "NewSunFace", menuName = "Game/World/Sun Face")]
-public class SunFace : ScriptableObject
+[CreateAssetMenu(fileName = "New Sun Face", menuName = "Game/World/Sun Face")]
+public class SunFace: ScriptableObject
 {
+    [field: SerializeField] public SunFaces Type { get; private set; }
     [field: SerializeField] public string FaceName { get; private set; }
     [field: SerializeField] public Color BaseColor { get; private set; } = Color.white;
     [field: SerializeField] public Sprite Image { get; private set; }
