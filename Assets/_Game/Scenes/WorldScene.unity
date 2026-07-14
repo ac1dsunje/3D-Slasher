@@ -567,7 +567,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.Biomes.BiomeManager
   _biomes:
-  - {fileID: 11400000, guid: 68981048417796645a058dbdd1e49374, type: 2}
   - {fileID: 11400000, guid: 1e33e9ec8c116c34381808aa343bbbf0, type: 2}
   - {fileID: 11400000, guid: d87ef71b12e75b54995450774a23ee02, type: 2}
   - {fileID: 11400000, guid: 7e6f19b0087b75b42adb91850efbc742, type: 2}
