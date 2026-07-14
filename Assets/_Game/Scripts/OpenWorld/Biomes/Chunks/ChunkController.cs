@@ -1,4 +1,5 @@
-﻿using _Game.Scripts.Player;
+﻿using System.Collections.Generic;
+using _Game.Scripts.Player;
 using UnityEngine;
 
 namespace _Game.Scripts.OpenWorld.Biomes.Chunks
@@ -9,6 +10,7 @@ public class ChunkController: MonoBehaviour
     [SerializeField] private Transform _centralPoint;
     private Biome _biome;
     private Renderer _renderer;
+    private readonly List<Transform> _freePoints = new();
 
     private const float ChunkOffset = 0.5f;
 
@@ -26,9 +28,17 @@ public class ChunkController: MonoBehaviour
             0,
             gridPos.y * chunkSize + chunkSize * ChunkOffset
         );
-        
         GetRandomRotation();
         ApplyBiome();
+    }
+
+    private void FillSpawnPossibilities()
+    {
+        foreach (var point in _points)
+        {
+            _freePoints.Add(point);
+        }
+        _freePoints.Add(_centralPoint);
     }
 
     private void GetRandomRotation()
@@ -40,6 +50,8 @@ public class ChunkController: MonoBehaviour
     private void ApplyBiome()
     {
         SetBiomeColor();
+        
+        FillSpawnPossibilities();
         
         CreateEnvironment();
     }
@@ -57,11 +69,10 @@ public class ChunkController: MonoBehaviour
     private void CreateEnvironment()
     {
         if (_biome.Environments.Length == 0) return;
-        foreach (var point in _points)
+        foreach (var point in _freePoints)
         {
             TrySetRandomEnvironment(point);
         }
-        TrySetRandomEnvironment(_centralPoint);
     }
 
     private void TrySetRandomEnvironment(Transform position)
@@ -74,7 +85,7 @@ public class ChunkController: MonoBehaviour
     private bool GetSpawnPossibility(int chance)
     {
         var spawnChance = Random.Range(0, 100);
-        return spawnChance >= _biome.EnvChance;
+        return spawnChance >= chance;
     }
 
     private void CreateObject(GameObject obj, Transform parent)
