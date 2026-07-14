@@ -206,13 +206,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalRotation: {x: 0.46174863, y: 0, z: 0, w: 0.8870109}
   m_LocalPosition: {x: 0, y: 8, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 55, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _speed: 5
-  _offset: {x: 0, y: 11, z: -7}
+  _offset: {x: 0, y: 33, z: -7}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,7 +754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_Game.Scripts.Biomes.Chunks.ChunkManager
   _chunkPrefab: {fileID: 3677667573439506752, guid: c58b35fe0e0676845aef296e75cf2438, type: 3}
   _chunkSize: 10
-  _viewRadius: 5
+  _viewRadius: 10
 --- !u!114 &2013069886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -871,14 +871,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 859868992}
     m_Modifications:
-    - target: {fileID: 2096469198392683406, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -760569459194559623, guid: f416ebac80941d94ea7f60b846a7c84d, type: 3}
-    - target: {fileID: 3785041620146072733, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4715689399489285911, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -960,12 +952,52 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4972249144770561727, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972249144770561727, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972249144770561727, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972249144770561727, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972249144770561727, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972249144770561727, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972249144770561727, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 5340621979757698391, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
       propertyPath: m_Name
       value: Overlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586937573481816610, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586937573481816610, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586937573481816610, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399228127300137626, guid: 22728bfb20f6e824ca328e38bbe0334f, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
