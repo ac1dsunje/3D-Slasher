@@ -18,9 +18,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 000ec64dd4cd9be449c5c78b8aa12b3a, type: 2}
   - {fileID: 11400000, guid: 2b6f1e83e0779f74c97932972ee569f6, type: 2}
   <Buildings>k__BackingField: []
-  <BuildingChance>k__BackingField: 10
+  <BuildingChance>k__BackingField: 20
   <Environments>k__BackingField:
   - {fileID: 3477334754174154289, guid: d3cc6647eccc5e84fbc6835331955d94, type: 3}
-  <EnvironmentChance>k__BackingField: 50
+  <EnvironmentChance>k__BackingField: 40
   <SpecialObjects>k__BackingField: []
   <SpecialChance>k__BackingField: 30
