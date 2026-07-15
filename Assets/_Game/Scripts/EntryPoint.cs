@@ -29,8 +29,8 @@ public class EntryPoint : MonoBehaviour
     {
         _cameraController.Construct(_player.transform);
         _chunkManager.Construct(_player.transform, _biomeManager, _sunsManager);
-        _lightController.Construct(_timeController);
-        _sunsManager.Construct(_lightController, _timeController);
+        _lightController.Construct(_timeController, _sunsManager);
+        _sunsManager.Construct(_timeController);
 
         _gameStateManager = new GameStateManager(_timeController);
         _overlay.Construct(_timeController, _sunsManager);

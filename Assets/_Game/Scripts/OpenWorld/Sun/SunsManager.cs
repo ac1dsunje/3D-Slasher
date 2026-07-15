@@ -15,19 +15,16 @@ public class SunsManager: MonoBehaviour
 {
     [SerializeField] private SunFace[] _sunFaces;
     
-    private LightController _lightController;
     private TimeController _timeController;
     private int _faceIndex;
     private int _currentFaceDuration;
 
     public event Action<SunFace> OnSunFaceChanged;
 
-    public void Construct(LightController lightController, TimeController timeController)
+    public void Construct(TimeController timeController)
     {
         _timeController = timeController;
         _timeController.OnDayChanged += OnDayChanged;
-        
-        _lightController = lightController;
         SetNewSunFace(_sunFaces[0]);
     }
 
@@ -52,7 +49,6 @@ public class SunsManager: MonoBehaviour
     private void SetNewSunFace(SunFace sunFace)
     {
         _currentFaceDuration = Random.Range(sunFace.MinDuration, sunFace.MaxDuration + 1);
-        _lightController.SetSunFace(sunFace);
         OnSunFaceChanged?.Invoke(sunFace);
     }
 }
